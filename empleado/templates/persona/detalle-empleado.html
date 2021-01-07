@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+
+
+{% block title %}
+{{object.full_name}}
+{% endblock title %}
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x grid-margin-x">
+        <h1 class="cell"> Datos de Empleado</h1>
+
+        <table class grid-x>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Trabajo</th>
+                <th>Departamento</th>
+                <th>Habilidades</th>
+            </tr>
+            <tr>
+                <td>{{empleado.first_name}}</td>
+                <td>{{empleado.last_name}}</td>
+                <td>{{empleado.get_job_display}}</td>
+                <td>{{empleado.departamento.shortname}}</td>
+                <td>
+                    {% for h in empleado.habilidades.all %}
+                    <ul>{{h}}</ul>
+
+
+                    {% endfor %}
+
+                </td>
+
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

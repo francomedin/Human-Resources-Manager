@@ -1,0 +1,16 @@
+<h1>Lista Prueba</h1>
+<table border="1">
+    <tr>
+        <th>Titulo</th>
+        <th>Subtitulo</th>
+    </tr>
+
+    {% for pelicula in lista %}
+    <tr>
+        <td>{{pelicula.titulo}}</td>
+        <td>{{pelicula.subtitulo}}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+
